@@ -1,0 +1,24 @@
+//Check if one string is a rotation of another.
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char s1[100], s2[100], temp[200];
+
+    scanf("%s %s", s1, s2);
+
+    if(strlen(s1) != strlen(s2))
+        printf("Not rotation");
+    else {
+        strcpy(temp, s1);
+        strcat(temp, s1);
+
+        if(strstr(temp, s2))
+            printf("Rotation");
+        else
+            printf("Not rotation");
+    }
+
+    return 0;
+}
