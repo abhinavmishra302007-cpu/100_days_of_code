@@ -1,0 +1,21 @@
+//Ask the user for a filename. Check if it exists by trying to open it in read mode.
+//If the file pointer is NULL, print an error message; otherwise, read and display its content.
+
+ #include <stdio.h>
+ 
+ int main(){
+    char filename[20];
+    char ch;
+    printf("the file name is:");
+    scanf("%s",filename);
+    FILE*fp;
+    fp=fopen(filename,"r");
+    if(fp==NULL){
+        printf("File does not exist or cannot be opened.\n");
+        return 1;
+    }
+    while((ch=fgetc(fp))!=EOF){
+        printf("%c",ch);
+    }
+    return 0;
+ }
